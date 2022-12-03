@@ -40,7 +40,6 @@ let addNotes = (note) => {
   } else {
     let existing = JSON.parse(getNotes());
     existing.push(note);
-
     setNotes(existing);
   }
 };
@@ -59,7 +58,7 @@ let updateContent = () => {
   } else {
     let note = document.querySelectorAll(".s_note");
     note.forEach((element, i) => {
-      element.addEventListener("input", () => {
+      element.addEventListener("change", () => {
         let manipulate = JSON.parse(getNotes());
         manipulate[i].content = element.value;
         setNotes(manipulate);
@@ -122,6 +121,7 @@ let displayNotes = () => {
     let plus = document.querySelector(".addnote");
     let getContainer = document.querySelector("#container");
     getContainer.insertBefore(area, plus);
+    updateContent();
   });
 
   //Deleting
