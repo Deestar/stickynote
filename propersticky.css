@@ -1,8 +1,12 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
-
+:root {
+  --border: 2px solid red;
+  --border2: 2px solid blue;
+}
 body {
   min-height: 100vh;
 
@@ -10,38 +14,60 @@ body {
   z-index: 500;
   background-attachment: fixed;
 }
-
+body {
+  /* border: var(--border); */
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  overflow: hidden;
+}
 header {
-  background-color: rgba(47, 41, 41, 0.4);
-  height: 34px;
-  width: 100%;
-  margin-top: 25px;
-  display: grid;
-  place-content: center;
+  /* border: var(--border); */
+  text-align: center;
+  width: 50%;
+  align-self: center;
   font-size: 40px;
-  font-family: cursive;
+  color: rgb(128, 74, 23);
+  text-shadow: 2px 2px 5px rgba(124, 84, 99, 0.808);
+  height: fit-content;
 }
 #container {
-  /* border: 2px red solid; */
+  /* border: var(--border); */
   display: flex;
   flex-direction: row;
   max-width: 95%;
   margin: 10px;
+  justify-content: center;
   flex-wrap: wrap;
   padding-left: 50px;
   padding-right: 20px;
   grid-column-end: auto;
   gap: 80px;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  background-color: pink;
+  max-height: 30px;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(228, 84, 151, 0.596);
 }
 .s_note {
   width: 200px;
-  background-color: white;
+  background-color: rgb(248, 248, 248);
   padding: 10px;
   height: 220px;
-  border: 3px black solid;
+  border: 1px rgb(104, 99, 99) solid;
   border-radius: 15px;
   resize: none;
-  font-size: 30px;
+  font-size: 25px;
+  font-family: helvetica;
+  color: rgb(53, 53, 49);
+  box-shadow: 1px 1px 1px 0px rgba(235, 100, 123, 0.822) inset;
 }
 .addnote {
   width: 200px;
@@ -61,6 +87,7 @@ header {
 }
 
 .cont {
+  /* border: var(--border2); */
   width: 200px;
   height: 220px;
   background: rgba(0, 0, 0, 0.3);
@@ -194,6 +221,78 @@ header {
   width: 100px;
   color: pink;
   border: 2px red solid;
+}
+@media (max-width: 416px) {
+  .cont {
+    width: 150px;
+    align-items: center;
+    order: -2;
+    height: 150px;
+    row-gap: 20%;
+    padding: 0px;
+  }
+  .single {
+    height: 50px;
+    width: 100%;
+    /* border: var(--border2); */
+    margin: 0px;
+    font-size: 56px;
+    font-weight: 600;
+    align-self: center;
+    padding: 0px;
+  }
+  .rmv {
+    width: 100%;
+    height: 56px;
+    /* border: var(--border); */
+    font-size: 25px;
+    padding: 0px 3px;
+    margin: 0px;
+  }
+  .addnote {
+    order: -1;
+    height: 150px;
+    width: 150px;
+    font-size: 70px;
+  }
+  header {
+    font-size: 23px;
+    font-weight: 600;
+  }
+  body {
+    /* border: var(--border); */
+  }
+  #container {
+    /* border: var(--border); */
+    max-width: 100vw;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    margin-right: 0px;
+    row-gap: 15px;
+  }
+  #anim_5 {
+    animation: none;
+    display: none;
+  }
+  #anim_4 {
+    animation: none;
+    display: none;
+  }
+  #anim_3 {
+    animation: none;
+    display: none;
+  }
+  #anim_2 {
+    animation: none;
+    display: none;
+  }
+  #anim_1 {
+    animation: none;
+    display: none;
+  }
 }
 @keyframes updown {
   from {
