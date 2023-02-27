@@ -1,2 +1,8 @@
-#THIS IS A STICKY NOTE
-This is my first github practice currently getting used to github commands
+## Sticky Notes Built With VANILLAJs 
+- Save Note 
+
+- Delete Note
+
+- Add more Note
+
+- For Moble and Desktop
